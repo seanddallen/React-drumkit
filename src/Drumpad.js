@@ -10,7 +10,7 @@ class Drumpad extends Component {
   render() {
     return (
       <div className="drum-pad" id={this.props.id} onClick={this.handleClick}>
-        <p>{this.props.letter}</p>
+        <h1>{this.props.letter}</h1>
         <audio 
             className="clip" 
             src={this.props.src} 
