@@ -16,14 +16,23 @@ const sounds = [
 
 class App extends Component {
 
+  state = {
+    display: ''
+  }
+
+  handleDisplay = display => this.setState({display})
+
   render() {
 
-    const listOfSounds = sounds.map(sound => <Drumpad id={sound.id} letter={sound.letter} />)
+    const listOfSounds = sounds.map(sound => <Drumpad id={sound.id} letter={sound.letter} handleDisplay={this.handleDisplay} />)
 
     return (
       <div className="App">
         <div id="drumkit">
           <div id="display">
+            {this.state.display}
+          </div>
+          <div id="drum-pads">
             {listOfSounds}
           </div>
         </div>
