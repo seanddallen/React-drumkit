@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import Drumpad from './Drumpad'
 
 const sounds = [
   { id: 'snare', letter: 'Q', src: 'https://www.myinstants.com/media/sounds/snare.mp3' },
@@ -14,9 +15,10 @@ const sounds = [
 ]
 
 class App extends Component {
+
   render() {
 
-    const listOfSounds = sounds.map(sound => <Drumpad id={sound.id} />)
+    const listOfSounds = sounds.map(sound => <Drumpad id={sound.id} letter={sound.letter} />)
 
     return (
       <div className="App">
